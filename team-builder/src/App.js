@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Form from './Form'
+import TeamMember from './TeamMember'
 // import axios from 'axios'
 
 
@@ -12,7 +13,7 @@ const initialFormValues = {
 
 function App() {
 
-const [teamMember, setTeamMember] = useState([])
+const [teamMembers, setTeamMember] = useState([])
 const [formValues, setFormValues] = useState(initialFormValues)
 
 const updateForm = (inputName, inputValue) => {
@@ -30,7 +31,14 @@ const submitForm = () => {
 
   return (
     <div className="App">
-      <Form 
+      <Form
+      values={formValues}
+      update={updateForm}
+      submit={submitForm}
+      />
+      {teamMembers.map(member => {
+        return <TeamMember key={member.id} details={member} />
+      })}
     </div>
   );
 }
