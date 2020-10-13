@@ -16,6 +16,7 @@ function App() {
 
 const [teamMembers, setTeamMember] = useState([])
 const [formValues, setFormValues] = useState(initialFormValues)
+const [memberToEdit, setMemberToEdit] = useState({})
 
 const updateForm = (inputName, inputValue) => {
   setFormValues({...formValues, [inputName]:inputValue})
@@ -34,7 +35,10 @@ const submitForm = () => {
   setFormValues(initialFormValues)
 }
 
-
+//stretch
+const editMember = () => {
+  
+}
 
   return (
     <div className="App">
