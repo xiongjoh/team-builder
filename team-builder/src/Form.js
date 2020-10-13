@@ -16,7 +16,6 @@ export default function Form(props) {
 
   return (
     <form className="form container" onSubmit={onSubmit}>
-      <div>
 
         <label>
           Name
@@ -52,7 +51,7 @@ export default function Form(props) {
             <button>submit</button>
         </div>
 
-      </div>
+
     </form>
   );
 }

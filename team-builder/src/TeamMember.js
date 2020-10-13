@@ -1,22 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 export default function TeamMember(props) {
-    const {details} = props
+    const {details, edit} = props
 
     if (!details) {
         return <h3>Fetching Details...</h3>
     }
 
-    const edit = (evt) => {
-        console.log(`editing`)
+    const editThisMember = (evt) => {
+        edit(details.name, details.email, details.role, details.id)
     }
 
     return (
-        <div className='container' onSubmit={edit}>
+        <div className='container'>
             <h2>{details.name}</h2>
             <p>Email: {details.email}</p>
             <p>Role: {details.role}</p>
-            <button>Edit</button>
+            <div>
+            <button onClick={editThisMember}>Edit</button>
+            </div>
+            
         </div>
     )
 }
